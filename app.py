@@ -29,7 +29,7 @@ def main():
 	if choice == "Home":
 		st.subheader("Home")
 		# layout
-		col1 = st.columns(1)
+		col1,col2 = st.columns(1)
 
 		with col1:
 			st.info("Ubuntu Names Generator")
