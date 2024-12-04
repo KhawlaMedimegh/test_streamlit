@@ -29,7 +29,7 @@ def main():
 	if choice == "Home":
 		st.subheader("Home")
 		# layout
-		col1,col2 = st.columns(2)
+		col1 = st.columns(1)
 
 		with col1:
 			st.info("Ubuntu Names Generator")
@@ -42,26 +42,6 @@ def main():
 
 				# Copy
 				st.code(results)
-
-		with col2:
-			st.success("Ambivalent Words Generator")
-			alphabet_list_with_any = ['Any','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-			alphabeth_type = st.selectbox("Startwith Alphabet",alphabet_list_with_any)
-			
-			if st.button("Ambivalentize"):
-				if alphabeth_type == "Any":
-					results =  random.choice(positive_wordlist) + ' ' + random.choice(negative_wordlist)
-				else:
-					custom_positive_wordlist = custom_filter(positive_wordlist,alphabeth_type.lower())
-					custom_negative_wordlist = custom_filter(negative_wordlist,alphabeth_type.lower())
-					results =  random.choice(custom_positive_wordlist) + ' ' + random.choice(custom_negative_wordlist)
-				
-				st.write(results)
-
-				# Copy
-				st.code(results)
-
-
 
 	else:
 		st.subheader("About")
